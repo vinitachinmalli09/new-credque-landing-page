@@ -1,0 +1,12 @@
+<button
+  class="cq-btn"
+  [class.cq-btn--primary]="variant() === 'primary'"
+  [class.cq-btn--secondary]="variant() === 'secondary'"
+  [class.cq-btn--ghost]="variant() === 'ghost'"
+  [class.cq-btn--full-width]="fullWidth()"
+  [attr.type]="type()"
+  (click)="onClick($event)"
+>
+  <ng-content></ng-content>
+</button>
+

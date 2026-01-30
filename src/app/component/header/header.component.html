@@ -1,0 +1,58 @@
+\
+<header class="header">
+  <div class="header-container">
+    <a href="#hero" class="logo" aria-label="Credque home">
+      <img src="assets/logo.png" alt="Credque Logo" class="logo-img" />
+    </a>
+
+    <nav class="nav nav-desktop" aria-label="Primary">
+      <button class="nav-link" type="button" (click)="toggleFeaturesDropdown()">
+        Features
+          <span class="arrow"></span>
+      </button>
+
+      <button class="nav-link" type="button" (click)="toggleFeaturesDropdown()">
+        Pricing
+          <span class="arrow"></span>
+      </button>
+
+      <button class="nav-link" type="button" (click)="toggleResourcesDropdown()">
+        Resources
+     <span class="arrow"></span>
+      </button>
+    </nav>
+
+    <div class="header-cta">
+      <cq-button variant="primary">
+        Book a Demo
+      </cq-button>
+
+      <button
+        type="button"
+        class="hamburger"
+        aria-label="Toggle navigation"
+        (click)="toggleMobileMenu()"
+      >
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+    </div>
+  </div>
+
+  @if (isMobileMenuOpen()) {
+    <nav class="nav-mobile" aria-label="Mobile navigation">
+      <button class="nav-link" type="button" (click)="toggleFeaturesDropdown()">
+        Features
+         <span class="arrow"></span>
+      </button>
+
+      <a href="#pricing" class="nav-link">Pricing</a>
+
+      <button class="nav-link" type="button" (click)="toggleResourcesDropdown()">
+        Resources
+          <span class="arrow"></span>
+      </button>
+    </nav>
+  }
+</header>

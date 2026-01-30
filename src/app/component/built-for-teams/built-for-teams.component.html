@@ -1,0 +1,16 @@
+<section class="teams-section">
+  <div class="container">
+    <h2 class="section-title">
+      <span class="purple-text">Built for</span> Teams Like Yours
+    </h2>
+
+    <div class="teams-grid">
+      <div class="team-card" *ngFor="let team of teams; let i = index" [class.offset-down]="i === 1 || i === 2">
+        <div class="card-box">
+          <img [src]="team.image" [alt]="team.name" class="team-image">
+        </div>
+        <p class="team-name">{{ team.name }}</p>
+      </div>
+    </div>
+  </div>
+</section>

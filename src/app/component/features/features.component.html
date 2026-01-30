@@ -1,0 +1,80 @@
+<section id="features" class="features">
+  <div class="features-container">
+
+    <!-- HEADER -->
+    <header class="features-header">
+      <h2 class="features-title">
+        <span class="title-regular">Features Designed to Manage your</span>
+        <span class="title-highlight">Workflow</span>
+      </h2>
+    </header>
+
+    <div class="features-content">
+
+      <!-- SIDEBAR -->
+      <aside class="features-sidebar">
+        <ul class="features-menu">
+          @for (feature of features(); track feature.id) {
+            <li
+              class="menu-item"
+              [class.active]="selectedFeature() === feature.id"
+              (click)="selectFeature(feature.id)"
+            >
+              <img
+                class="menu-icon"
+                [src]="feature.image"
+                [alt]="feature.label + ' icon'"
+              />
+              <span class="menu-label">{{ feature.label }}</span>
+            </li>
+          }
+        </ul>
+      </aside>
+
+      <!-- MAIN CONTENT -->
+      <main class="features-main">
+        @for (feature of features(); track feature.id) {
+          @if (selectedFeature() === feature.id) {
+
+            <div class="feature-detail">
+
+              <div class="detail-header">
+                <h3 class="detail-title">{{ feature.label }}</h3>
+                <p class="detail-description">
+                  @switch (feature.id) {
+                    @case ('users') {
+                      Create a smooth team structure with role-based controls that keep your operations organized.
+                    }
+                    @case ('dashboard') {
+                      Get a comprehensive view of your operations with real-time analytics and insights.
+                    }
+                    @case ('cold-calling') {
+                      Streamline your outreach efforts with advanced cold calling features.
+                    }
+                    @default {
+                      Manage your {{ feature.label }} efficiently with our powerful tools.
+                    }
+                  }
+                </p>
+              </div>
+
+              <div class="feature-visual">
+                <div class="feature-image-frame">
+                  <img
+                    [src]="feature.image"
+                    class="feature-image"
+                    [alt]="feature.label + ' illustration'"
+                    (error)="handleImageError($event, feature)"
+                  />
+                </div>
+              </div>
+
+            </div>
+
+          }
+        }
+      </main>
+
+    </div>
+  </div>
+</section>

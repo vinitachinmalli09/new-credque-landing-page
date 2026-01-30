@@ -1,0 +1,53 @@
+@use '../../../styles/variables' as *;
+
+.cq-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding-inline: $cq-space-xl;
+  padding-block: $cq-space-md;
+  border-radius: $cq-radius-pill;
+  font-family: $cq-font-family-display;
+  font-size: $cq-font-size-label;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: 0.3s ease;
+  background: $cq-color-white;
+  color: $cq-color-text-main;
+  box-shadow: $cq-shadow-soft;
+
+  &--primary {
+    background: $cq-gradient-btn-primary;
+    color: $cq-color-white;
+    box-shadow: $cq-shadow-soft;
+  }
+
+  &--secondary {
+    background-color: $cq-color-white;
+    border-color: $cq-color-border-soft;
+    color: $cq-color-text-main;
+  }
+
+  &--ghost {
+    background-color: transparent;
+    border-color: transparent;
+    color: $cq-color-text-main;
+  }
+
+  &--full-width {
+    width: 100%;
+  }
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: $cq-shadow-card-elevated;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $cq-color-primary;
+    outline-offset: 2px;
+  }
+}
+

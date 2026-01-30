@@ -1,0 +1,58 @@
+@use 'variables' as *;
+
+// Responsive mixin using design breakpoints
+@mixin cq-responsive($breakpoint) {
+  @if $breakpoint == lg {
+    @media (max-width: $cq-breakpoint-lg) {
+      @content;
+    }
+  } @else if $breakpoint == md {
+    @media (max-width: $cq-breakpoint-md) {
+      @content;
+    }
+  } @else if $breakpoint == sm {
+    @media (max-width: $cq-breakpoint-sm) {
+      @content;
+    }
+  } @else if $breakpoint == xs {
+    @media (max-width: $cq-breakpoint-xs) {
+      @content;
+    }
+  }
+}
+
+// Center content with optional direction
+@mixin cq-flex-center($direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: center;
+  justify-content: center;
+}
+
+// Standard section spacing and container
+@mixin cq-section {
+  padding-block: $cq-space-4xl;
+}
+
+@mixin cq-container {
+  max-width: $cq-container-max-width;
+  margin-inline: auto;
+  padding-inline: $cq-container-horizontal-padding-desktop;
+  
+  @include cq-responsive(sm) {
+    padding-inline: $cq-container-horizontal-padding-mobile;
+  }
+}
+
+// Card surface
+@mixin cq-card($radius: $cq-radius-xl, $shadow: $cq-shadow-card-elevated) {
+  background-color: $cq-color-white;
+  border-radius: $radius;
+  box-shadow: $shadow;
+}
+
+// Focus ring
+@mixin cq-focus-ring {
+  outline: 2px solid $cq-color-primary;
+  outline-offset: 2px;
+}

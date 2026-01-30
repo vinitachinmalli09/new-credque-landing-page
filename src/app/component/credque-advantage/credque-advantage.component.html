@@ -1,0 +1,19 @@
+<section class="advantage-section">
+  <div class="container">
+
+    <h2 class="section-title">
+      The Credque <span>Advantage</span>
+    </h2>
+
+    <!-- Placeholder for next content (cards / image / text) -->
+    <div class="advantage-content">
+      <div class="advantages-grid">
+        <div class="advantage-card" *ngFor="let advantage of advantages">
+          <h3 class="advantage-title">{{ advantage.title }}</h3>
+          <p class="advantage-detail">{{ advantage.detail }}</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

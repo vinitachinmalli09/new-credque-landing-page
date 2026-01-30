@@ -1,0 +1,226 @@
+@use '../../../styles/variables' as *;
+@use 'mixins';
+
+.hero-container {
+  @include mixins.cq-container;
+  width: 100%;
+  position: relative;
+}
+
+.hero {
+  min-height: 90vh;
+  background: $cq-color-hero-bg;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding-block: $cq-space-4xl $cq-space-3xl;
+}
+
+
+// Decorative Sparkles
+.sparkle {
+  position: absolute;
+  font-size: 2rem;
+  animation: float 3s ease-in-out infinite;
+  
+  &.sparkle-1 {
+    left: 10%;
+    top: 40%;
+    animation-delay: 0s;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(10deg);
+  }
+}
+
+// Hero Content
+.hero-content {
+  text-align: center;
+  max-width: 1100px;
+  margin: 0 auto 4rem;
+}
+
+.hero-subtitle {
+  font-size: $cq-font-size-hero-kicker;
+  font-weight: 600;
+  color: $cq-color-text-muted;
+  margin-bottom: $cq-space-md;
+  letter-spacing: -0.5px;
+}
+
+.hero-title {
+  font-size: 65px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: $cq-space-xl;
+  letter-spacing: -1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  .gradient-text-blue {
+    background: linear-gradient(135deg, #4a90e2, #5ba3f5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-text-purple {
+    background: linear-gradient(135deg, #8a62ea, #a77fed);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .gradient-text-pink {
+    background: linear-gradient(135deg, #d946ef, #e879f9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .separator {
+    color: $cq-color-text-muted;
+    opacity: 0.3;
+    font-weight: 300;
+  }
+}
+
+.hero-description {
+  font-size: 1.25rem;
+  color: $cq-color-text-muted;
+  line-height: 1.8;
+  max-width: 800px;
+  margin: 0 auto;
+  font-weight: 400;
+}
+
+// Chart Preview Card
+.chart-preview {
+  display: flex;
+  justify-content: center;
+  margin-top: $cq-space-2xl;
+}
+
+.chart-card {
+  background: $cq-color-white;
+  border-radius: $cq-radius-xl;
+  padding: $cq-space-lg $cq-space-xl;
+  box-shadow: $cq-shadow-chart;
+  max-width: 500px;
+  width: 100%;
+}
+
+.chart-header {
+  margin-bottom: 1rem;
+}
+
+.chart-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: $cq-color-text-dark;
+  margin: 0;
+}
+
+.chart-content {
+  position: relative;
+}
+
+.chart-badge {
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: $cq-gradient-primary;
+  color: $cq-color-white;
+  padding: $cq-space-xs $cq-space-md;
+  border-radius: $cq-radius-sm;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 15px rgba(138, 98, 234, 0.3);
+  z-index: 10;
+
+  .badge-number {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  .badge-label {
+    font-size: 0.9rem;
+    opacity: 0.95;
+  }
+}
+
+.chart-svg {
+  width: 100%;
+  height: 150px;
+  margin-top: 1rem;
+}
+
+// Responsive Design
+@media (max-width: 1024px) {
+  .hero-subtitle {
+    font-size: 2rem;
+  }
+
+  .hero-title {
+    font-size: 3.5rem;
+  }
+
+  .hero-description {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+    padding: 3rem 0;
+  }
+
+  .hero-container {
+    padding: 0 1.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.5rem;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    .separator {
+      display: none;
+    }
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .chart-card {
+    padding: 1rem 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+}

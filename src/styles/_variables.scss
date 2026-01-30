@@ -1,0 +1,82 @@
+// Design tokens generated from Figma `Credque Website` ([link](https://www.figma.com/design/7lI9Ati8BWGJCa5c8ZDFMd/Credque-Website?node-id=224-833))
+
+// Color palette
+$cq-color-white: #ffffff;
+$cq-color-text-main: rgba(0, 0, 0, 0.7); // fill_BWGA9B
+$cq-color-text-muted: #6c7787; // fill_U6M2P0
+$cq-color-text-subtle: #5d6180; // fill_JAXEJ7
+$cq-color-text-dark: #041527; // fill_0L9FY4
+$cq-color-text-hero-gradient-start: #8ab2dc; // from fill_LJ8D0O
+$cq-color-text-hero-gradient-end: #e94efe;
+
+$cq-color-primary: #9374ff; // fill_ZFKT5E
+$cq-color-primary-soft: rgba(148, 118, 253, 0.15); // fill_IM25ET
+$cq-color-secondary: #6241d4; // stroke_VD23SA / stroke_305JVY
+$cq-color-accent: #ffdc60; // fill_T06KUK
+$cq-color-surface: #fff8fb; // fill_YYBBQE
+$cq-color-surface-alt: rgba(217, 217, 217, 0.15); // fill_KP6CCI
+$cq-color-border-soft: rgba(0, 0, 0, 0.3); // stroke_REBSGQ
+$cq-color-border-subtle: #e5e7eb;
+$cq-color-border-card: rgba(93, 97, 128, 0.5); // stroke_4D7JZW
+
+$cq-color-hero-bg: radial-gradient(circle at 50% 55%, rgba(255, 255, 255, 0.3) 0%, rgba(148, 118, 253, 0.35) 100%); // fill_ZAK4U2
+$cq-color-hero-inner-bg: radial-gradient(circle at 50% 55%, rgba(255, 255, 255, 1) 0%, rgba(148, 118, 253, 0.35) 100%); // fill_3J586S
+$cq-color-section-testimonial-bg: rgba(148, 118, 253, 0.15); // fill_IM25ET
+
+$cq-gradient-primary: linear-gradient(90deg, #e94efe 0%, #8ab2dc 100%); // gradient 3
+$cq-gradient-hero-track: linear-gradient(90deg, #8ab2dc 0%, #e94efe 100%); // fill_LJ8D0O
+$cq-gradient-btn-primary: linear-gradient(90deg, #e94efe 0%, #8ab2dc 100%);
+$cq-gradient-badge-analytics: linear-gradient(180deg, #9374ff 0%, rgba(147, 116, 255, 0) 100%); // fill_5HGDLW
+
+// Typography tokens (Inter / Lato from Figma)
+$cq-font-family-sans: 'Inter', system-ui, -apple-system, blinkmacsystemfont, 'Segoe UI', sans-serif;
+$cq-font-family-display: 'Lato', system-ui, -apple-system, blinkmacsystemfont, 'Segoe UI', sans-serif;
+
+$cq-font-size-hero-title: 40px; // style_FI18GW
+$cq-font-size-hero-kicker: 25px; // style_U15OOL
+$cq-font-size-hero-subtitle: 26px; // style_9NNVAC
+$cq-font-size-section-heading: 40px; // style_463DDH / style_E88LWR
+$cq-font-size-section-subheading: 24px; // style_S3WD8C / style_SJEM7J
+$cq-font-size-body: 18px; // style_745ZGH / style_CL9EI2
+$cq-font-size-label: 16px; // many subtitle styles
+
+$cq-line-height-tight: 1.2;
+$cq-line-height-relaxed: 1.7;
+
+// Spacing scale (derived from Figma layout dimensions)
+$cq-space-2xs: 0.25rem;
+$cq-space-xs: 0.5rem;
+$cq-space-sm: 0.75rem;
+$cq-space-md: 1rem;
+$cq-space-lg: 1.5rem;
+$cq-space-xl: 2rem;
+$cq-space-2xl: 3rem;
+$cq-space-3xl: 4rem;
+$cq-space-4xl: 5rem;
+
+// Radii
+$cq-radius-xs: 6px;
+$cq-radius-sm: 8px;
+$cq-radius-md: 10px;
+$cq-radius-lg: 15px;
+$cq-radius-xl: 20px;
+$cq-radius-2xl: 40px;
+$cq-radius-pill: 50px;
+$cq-radius-full: 9999px;
+
+// Shadows
+$cq-shadow-soft: 0 4px 4px rgba(0, 0, 0, 0.25); // effect_9IWZXW / effect_PBJOZD
+$cq-shadow-card-elevated: 0 8.6px 43px -2.15px rgba(6, 12, 59, 0.08); // effect_8C4K32
+$cq-shadow-chart: 0 10px 40px rgba(0, 0, 0, 0.08);
+
+// Layout container widths
+$cq-container-max-width: 1400px;
+$cq-container-horizontal-padding-desktop: 3rem;
+$cq-container-horizontal-padding-mobile: 1.5rem;
+
+// Breakpoints
+$cq-breakpoint-lg: 1200px;
+$cq-breakpoint-md: 1024px;
+$cq-breakpoint-sm: 768px;
+$cq-breakpoint-xs: 480px;
+

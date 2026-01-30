@@ -1,0 +1,12 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as mixins;
+
+.cq-card {
+  @include mixins.cq-card($cq-radius-xl, $cq-shadow-card-elevated);
+  border: 1px solid $cq-color-border-card;
+
+  &--padded {
+    padding: $cq-space-2xl;
+  }
+}
+

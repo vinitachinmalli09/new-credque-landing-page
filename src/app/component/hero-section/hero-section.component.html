@@ -1,0 +1,100 @@
+<section id="hero" class="hero">
+  <div class="hero-container">
+    
+    <!-- Decorative Sparkles with Animation -->
+    <div class="sparkle sparkle-1">✨</div>
+    <div class="sparkle sparkle-2">✨</div>
+    <div class="sparkle sparkle-3">✨</div>
+
+    <!-- Main Content -->
+    <div class="hero-content">
+      <h2 class="hero-subtitle">Transform the Way You</h2>
+      
+      <h1 class="hero-title">
+        <span class="gradient-text-blue">{{ mainHeading().part1 }}</span>
+        <span class="separator">|</span>
+        <span class="gradient-text-purple">{{ mainHeading().part2 }}</span>
+        <span class="separator">|</span>
+        <span class="gradient-text-pink">{{ mainHeading().part3 }}</span>
+      </h1>
+
+      <p class="hero-description">
+        {{ subheading() }}
+      </p>
+    </div>
+
+    <!-- Chart Preview Card with Animation -->
+    <div class="chart-preview">
+      <div class="chart-card">
+        <div class="chart-header">
+          <h3 class="chart-title">Data Analytics</h3>
+        </div>
+        
+        <div class="chart-content">
+          <!-- Badge -->
+          <div class="chart-badge">
+            <span class="badge-number">{{ chartData().employees }}</span>
+            <span class="badge-label">Employees</span>
+          </div>
+          
+          <!-- Chart Visual (Animated SVG) -->
+          <svg class="chart-svg" viewBox="0 0 300 150" preserveAspectRatio="xMidYMid meet">
+            <!-- Grid Lines -->
+            <line x1="30" y1="20" x2="30" y2="130" stroke="#e0e0e0" stroke-width="1"/>
+            <line x1="30" y1="130" x2="280" y2="130" stroke="#e0e0e0" stroke-width="1"/>
+            
+            <!-- Line 1 (Blue) with animation -->
+            <polyline
+              class="chart-line-1"
+              points="30,110 80,85 130,75 180,90 230,60 280,55"
+              fill="none"
+              stroke="url(#blueGradient)"
+              stroke-width="3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            
+            <!-- Line 2 (Yellow/Gold) with animation -->
+            <polyline
+              class="chart-line-2"
+              points="30,120 80,100 130,95 180,105 230,85 280,90"
+              fill="none"
+              stroke="url(#goldGradient)"
+              stroke-width="3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+            
+            <!-- Data Points for Line 1 -->
+            <circle class="data-point dp-1" cx="30" cy="110" r="4" fill="#4A90E2"/>
+            <circle class="data-point dp-2" cx="80" cy="85" r="4" fill="#4A90E2"/>
+            <circle class="data-point dp-3" cx="130" cy="75" r="4" fill="#4A90E2"/>
+            <circle class="data-point dp-4" cx="180" cy="90" r="4" fill="#4A90E2"/>
+            <circle class="data-point dp-5" cx="230" cy="60" r="4" fill="#4A90E2"/>
+            <circle class="data-point dp-6" cx="280" cy="55" r="4" fill="#4A90E2"/>
+            
+            <!-- Month Labels -->
+            <text x="30" y="145" font-size="10" fill="#999" class="month-label ml-1">Mar</text>
+            <text x="80" y="145" font-size="10" fill="#999" class="month-label ml-2">Apr</text>
+            <text x="130" y="145" font-size="10" fill="#999" class="month-label ml-3">May</text>
+            <text x="180" y="145" font-size="10" fill="#999" class="month-label ml-4">Jun</text>
+            <text x="230" y="145" font-size="10" fill="#999" class="month-label ml-5">Jul</text>
+            
+            <!-- Gradients -->
+            <defs>
+              <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:#4A90E2;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#5B9FED;stop-opacity:1" />
+              </linearGradient>
+              <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" style="stop-color:#F5C542;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#FFD76E;stop-opacity:1" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>

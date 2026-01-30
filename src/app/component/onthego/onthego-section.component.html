@@ -1,0 +1,49 @@
+<section class="onthego-section">
+  <div class="container">
+
+    <!-- Header -->
+    <div class="section-header">
+      <h2 class="section-title">
+        Credque CRM <span class="highlight">On-the-Go</span>
+      </h2>
+      <p class="section-description">
+        Access your CRM from your mobile, anytime and anywhere.
+      </p>
+    </div>
+
+    <!-- Content -->
+    <div class="content-wrapper">
+
+      <!-- Feature cards -->
+      <div
+        class="feature-card"
+        *ngFor="let card of featureCards"
+        [ngStyle]="card.position"
+      >
+        <div class="card">
+          <div class="icon-bg">
+            <img src="assets/feature-icon.png" alt="icon" />
+          </div>
+
+          <h4>{{ card.title }}</h4>
+          <p>{{ card.description }}</p>
+        </div>
+      </div>
+
+      <!-- Phone Images -->
+      <div class="phones">
+        <img
+          src="assets/phone-back.png"
+          class="phone back"
+          alt="Back phone"
+        />
+        <img
+          src="assets/phone-front.png"
+          class="phone front"
+          alt="Front phone"
+        />
+      </div>
+
+    </div>
+  </div>
+</section>

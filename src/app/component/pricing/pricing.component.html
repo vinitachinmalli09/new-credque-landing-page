@@ -1,0 +1,87 @@
+<section class="pricing-section">
+    <div class="pricing-container">
+      
+      <!-- Header Section -->
+      <div class="pricing-header">
+        <h2 class="pricing-title">
+          Designed for <span class="highlight">Teams of Every Size</span>
+        </h2>
+        
+        <!-- Billing Cycle Toggle -->
+        <div class="pricing-toggle">
+          <button 
+            class="toggle-btn" 
+            [class.active]="selectedBillingCycle === 'monthly'"
+            (click)="selectBillingCycle('monthly')">
+            Pay Monthly
+          </button>
+          <button 
+            class="toggle-btn" 
+            [class.active]="selectedBillingCycle === 'quarterly'"
+            (click)="selectBillingCycle('quarterly')">
+            Pay Quarterly
+          </button>
+          <button 
+            class="toggle-btn yearly" 
+            [class.active]="selectedBillingCycle === 'yearly'"
+            (click)="selectBillingCycle('yearly')">
+            Pay Yearly
+          </button>
+        </div>
+      </div>
+  
+      <!-- Pricing Cards -->
+      <div class="pricing-cards">
+        <div 
+          *ngFor="let plan of plans" 
+          class="pricing-card"
+          [class.recommended]="plan.recommended">
+          
+          <!-- Recommended Badge -->
+          <div class="recommended-badge" *ngIf="plan.recommended">
+            Recommended
+          </div>
+          
+          <!-- Card Header -->
+          <div class="card-header">
+            <h3 class="plan-name">{{ plan.name }}</h3>
+            
+            <!-- Price Display -->
+            <div class="price-wrapper" [class.custom]="plan.isCustom">
+              <ng-container *ngIf="!plan.isCustom">
+                <span class="currency">₹</span>
+                <span class="price">{{ plan.price }}</span>
+                <span class="period">{{ plan.period }}</span>
+              </ng-container>
+              <ng-container *ngIf="plan.isCustom">
+                <span class="price custom-text">{{ plan.price }}</span>
+              </ng-container>
+            </div>
+            
+            <p class="plan-description">{{ plan.description }}</p>
+          </div>
+  
+          <!-- Card Body - Benefits -->
+          <div class="card-body">
+            <h4 class="benefits-title">Benefits</h4>
+            <ul class="benefits-list">
+              <li class="benefit-item" *ngFor="let benefit of plan.benefits">
+                <span class="check-icon">✓</span>
+                <span class="benefit-text">{{ benefit }}</span>
+              </li>
+            </ul>
+          </div>
+  
+          <!-- Card Footer - CTA Button -->
+          <div class="card-footer">
+            <button 
+              class="cta-btn"
+              (click)="onGetStarted(plan.name)">
+              Get Started
+            </button>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+  </section>

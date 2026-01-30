@@ -1,0 +1,19 @@
+<section class="how-credque-works">
+  <div class="container">
+
+    <h2 class="section-title">
+      How <span>Credque</span> Works
+    </h2>
+
+    <div class="cards-grid">
+      <div class="work-card" *ngFor="let item of works; let i = index">
+        <div class="card-content">
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.description }}</p>
+        </div>
+        <img [src]="item.image" [alt]="item.title">
+      </div>
+    </div>
+
+  </div>
+</section>

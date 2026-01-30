@@ -1,0 +1,205 @@
+@use '../../../styles/variables' as *;
+@use '../../../styles/mixins' as mixins;
+
+/* ================================
+   SECTION
+================================ */
+.features {
+  @include mixins.cq-section;
+  background: $cq-color-white;
+}
+
+.features-container {
+  @include mixins.cq-container;
+}
+
+/* ================================
+   HEADER
+================================ */
+.features-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.features-title {
+  font-size: $cq-font-size-section-heading;
+  font-weight: 700;
+  line-height: 1.4;
+
+  .title-highlight {
+    color: $cq-color-primary;
+    margin-left: $cq-space-xs;
+  }
+
+  .title-regular {
+    color: $cq-color-text-muted;
+  }
+}
+
+/* ================================
+   LAYOUT
+================================ */
+.features-content {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: $cq-space-xl;
+  align-items: stretch;
+}
+
+/* ================================
+   SIDEBAR
+================================ */
+.features-sidebar {
+  background: $cq-color-white;
+  border-radius: $cq-radius-lg;
+  padding: $cq-space-sm;
+  border: 1px solid $cq-color-border-subtle;
+}
+
+.features-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Sidebar Item */
+.menu-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 12px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+
+  &:hover {
+    background: $cq-color-primary-soft;
+  }
+
+  &.active {
+    background: $cq-gradient-primary;
+  }
+}
+
+/* Sidebar Icon */
+.menu-icon {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* Sidebar Label */
+.menu-label {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: $cq-color-text-main;
+}
+
+.menu-item.active .menu-label {
+  color: white;
+}
+
+/* Make PNG icons visible on gradient */
+.menu-item.active .menu-icon {
+  filter: brightness(0) invert(1);
+}
+
+/* ================================
+   MAIN CONTENT
+================================ */
+.features-main {
+  background: $cq-color-white;
+  border-radius: $cq-radius-xl;
+  padding: $cq-space-2xl;
+  border: 1px solid $cq-color-border-subtle;
+}
+
+.feature-detail {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================================
+   TEXT
+================================ */
+.detail-header {
+  margin-bottom: 2.5rem;
+}
+
+.detail-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: $cq-color-text-dark;
+  margin-bottom: 1rem;
+}
+
+.detail-description {
+  font-size: 1rem;
+  color: $cq-color-text-muted;
+  line-height: 1.7;
+  max-width: 800px;
+}
+
+/* ================================
+   IMAGE (FIGMA MATCH)
+================================ */
+.feature-visual {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.feature-image-frame {
+  width: 100%;
+  max-width: 1100px;
+  background: $cq-color-white;
+  border-radius: 20px;
+  padding: 32px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.12);
+}
+
+.feature-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+@media (max-width: 1200px) {
+  .features-content {
+    grid-template-columns: 240px 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .features-content {
+    grid-template-columns: 1fr;
+  }
+
+  .features-sidebar {
+    display: none;
+  }
+
+  .features-main {
+    padding: 1.5rem;
+  }
+
+  .detail-title {
+    font-size: 1.5rem;
+  }
+}
