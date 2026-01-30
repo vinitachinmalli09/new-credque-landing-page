@@ -1,17 +1,12 @@
-import { ChangeDetectionStrategy, Component, input } from '@angular/core';
-import { LucideAngularModule } from 'lucide-angular';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'cq-icon',
   standalone: true,
-  imports: [LucideAngularModule],
+  imports: [CommonModule],
   templateUrl: './icon.component.html',
   styleUrl: './icon.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class IconComponent {
-  readonly name = input.required<string>();
-  readonly size = input(20);
-  readonly strokeWidth = input(2);
-}
-
+export class IconComponent {}
