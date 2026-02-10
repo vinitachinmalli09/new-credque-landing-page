@@ -25,6 +25,9 @@
 .footer-container {
   position: relative;
   z-index: 1;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
 }
 
 /* ======================
@@ -50,18 +53,28 @@
   gap: 0.5rem;
   font-size: 1.3rem;
   font-weight: 600;
+  margin-bottom: 1rem;
 }
 
+.footer-brand .brand-logo img {
+  max-width: 120px;
+  height: auto;
+}
+
+.footer-brand h4,
 .footer-col h4 {
   margin-bottom: 1rem;
   font-weight: 600;
 }
 
+.footer-brand ul,
 .footer-col ul {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
+.footer-brand li,
 .footer-col li {
   margin-bottom: 0.6rem;
   font-size: 0.95rem;
@@ -99,6 +112,19 @@
   font-size: 0.7rem;
 }
 
+.contact-item:last-child {
+  margin-bottom: 0;
+}
+
+.contact-item span {
+  flex-shrink: 0;
+}
+
+.contact-item p {
+  margin: 0;
+  line-height: 1.5;
+}
+
 /* ======================
    SOCIAL ICONS
 ====================== */
@@ -116,6 +142,7 @@
   height: 28px;
   object-fit: contain;
   transition: transform 0.3s ease;
+  cursor: pointer;
   
   &:hover {
     transform: scale(1.1);
@@ -141,6 +168,10 @@
   font-size: 0.85rem;
 }
 
+.footer-bottom p {
+  margin: 0;
+}
+
 .footer-bottom-right {
   display: flex;
   align-items: center;
@@ -162,6 +193,14 @@
    RESPONSIVE
 ====================== */
 @media (max-width: 900px) {
+  .footer {
+    padding: 3rem 0 2rem;
+  }
+
+  .footer-container {
+    padding: 0 20px;
+  }
+
   .footer-top {
     grid-template-columns: 1fr;
     gap: 3rem;
@@ -169,6 +208,7 @@
 
   .footer-links {
     grid-template-columns: 1fr 1fr;
+    gap: 2rem;
   }
 
   .footer-contact-section {
@@ -193,22 +233,102 @@
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 768px) {
+  .footer {
+    padding: 2.5rem 0 1.5rem;
+  }
+
+  .footer-container {
+    padding: 0 16px;
+  }
+
+  .footer-top {
+    gap: 2.5rem;
+  }
+
   .footer-links {
     grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
   }
-  
+
+  .footer-brand .brand-logo {
+    justify-content: center;
+  }
+
   .footer-contact-card {
     height: auto;
     padding: 1.5rem;
+    border-radius: 40px 0 40px 0;
+  }
+
+  .contact-item {
+    font-size: 0.85rem;
+  }
+
+  .footer-divider {
+    margin: 2rem 0 1rem;
+  }
+
+  .footer-bottom {
+    font-size: 0.8rem;
+  }
+
+  .footer-bottom-right {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding: 2rem 0 1rem;
+  }
+
+  .footer-top {
+    gap: 2rem;
+  }
+
+  .footer-links {
+    gap: 1.5rem;
+  }
+
+  .footer-brand .brand-logo img {
+    max-width: 100px;
+  }
+
+  .footer-brand h4,
+  .footer-col h4 {
+    font-size: 0.95rem;
+  }
+
+  .footer-brand li,
+  .footer-col li {
+    font-size: 0.85rem;
+  }
+
+  .footer-contact-card {
+    padding: 1.25rem;
+    border-radius: 30px 0 30px 0;
+  }
+
+  .contact-item {
+    font-size: 0.8rem;
+    gap: 0.5rem;
   }
   
   .social-icons {
     gap: 1rem;
+    width: auto;
+    height: auto;
     
     img {
       width: 24px;
       height: 24px;
     }
+  }
+
+  .footer-bottom {
+    font-size: 0.75rem;
   }
 }

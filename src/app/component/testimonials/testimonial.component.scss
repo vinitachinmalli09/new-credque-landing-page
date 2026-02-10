@@ -6,6 +6,7 @@
 .container {
   max-width: 1200px;
   margin: auto;
+  padding: 0 24px;
 }
 
 /* ---------- TITLE ---------- */
@@ -27,17 +28,15 @@
 /* ---------- WRAPPER ---------- */
 .testimonial-wrapper {
   position: relative;
-  padding-left: 320px; // ⬅️ IMPORTANT (more space for image)
+  padding-left: 320px;
 }
-
 
 /* ---------- IMAGE ---------- */
 .image-wrapper {
   position: absolute;
-  left: 80px; // ⬅️ pushes image inside card area
+  left: 80px;
   top: 50%;
   transform: translateY(-50%) rotate(45deg);
-
   width: 260px;
   height: 260px;
   border-radius: 40px;
@@ -54,11 +53,10 @@
 }
 
 /* ---------- CARD ---------- */
-/* ---------- CARD ---------- */
 .testimonial-card {
   width: 100%;
   background: #fff;
-  border-radius: 120px; // ⬅️ more pill-like
+  border-radius: 120px;
   padding: 80px 70px;
   position: relative;
 }
@@ -101,4 +99,99 @@
 
 .nav-btn.active {
   border-color: #000;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+  .testimonial-section {
+    padding: 60px 0;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .section-title {
+    font-size: 28px;
+    margin-bottom: 50px;
+  }
+
+  .testimonial-wrapper {
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .image-wrapper {
+    position: static;
+    transform: rotate(45deg);
+    margin-bottom: 30px;
+    width: 200px;
+    height: 200px;
+  }
+
+  .image-wrapper img {
+    transform: rotate(-45deg) scale(1.1);
+  }
+
+  .testimonial-card {
+    border-radius: 40px;
+    padding: 40px 30px;
+    width: 100%;
+  }
+
+  .testimonial-text {
+    max-width: 100%;
+    font-size: 16px;
+    line-height: 28px;
+    margin-bottom: 20px;
+  }
+
+  .author {
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+
+  .company-logo {
+    width: 120px;
+  }
+
+  .nav-buttons {
+    position: static;
+    margin-top: 30px;
+    justify-content: center;
+  }
+
+  .nav-btn {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 24px;
+    margin-bottom: 40px;
+  }
+
+  .image-wrapper {
+    width: 160px;
+    height: 160px;
+    margin-bottom: 20px;
+  }
+
+  .testimonial-card {
+    border-radius: 30px;
+    padding: 30px 20px;
+  }
+
+  .testimonial-text {
+    font-size: 15px;
+    line-height: 26px;
+  }
+
+  .company-logo {
+    width: 100px;
+  }
 }

@@ -56,9 +56,6 @@
 }
 
 /* =========================
-   Phones
-========================= */
-/* =========================
    Phones Wrapper
 ========================= */
 .phones {
@@ -66,14 +63,13 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  /* Add these to create a frame for the images */
   width: 500px; 
   height: 600px;
 }
 
 .phone {
   position: absolute;
-  width: 340px; /* Slightly reduced to fit better */
+  width: 340px;
   height: auto;
   object-fit: contain;
   transition: all 0.3s ease;
@@ -81,14 +77,12 @@
 
 .phone.back {
   z-index: 1;
-  /* Adjust these to see the "offset" effect */
   left: 100px;
   top: 50px; 
 }
 
 .phone.front {
   z-index: 2;
-  /* Push the front phone to the right and higher */
   left: 40px;
   top: 300px;
 }
@@ -100,7 +94,6 @@
   position: absolute;
   width: 244px;
 }
-
 
 .icon-bg {
   width: 48px;
@@ -136,13 +129,34 @@
 /* =========================
    Responsive
 ========================= */
-@media (max-width: 1024px) {
-  .feature-card {
-    display: none;
+@media (max-width: 768px) {
+  .onthego-section {
+    padding: 60px 0;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .section-header {
+    margin-bottom: 40px;
+  }
+
+  .section-title {
+    font-size: 28px;
+  }
+
+  .section-description {
+    font-size: 16px;
+    margin-top: 8px;
   }
 
   .content-wrapper {
     height: auto;
+  }
+
+  .feature-card {
+    display: none;
   }
 
   .phones {
@@ -150,17 +164,40 @@
     left: auto;
     top: auto;
     transform: none;
+    width: 100%;
+    height: auto;
     display: flex;
     justify-content: center;
-    margin-top: 40px;
+    align-items: center;
+    margin-top: 20px;
   }
 
   .phone {
     position: relative;
-    width: 260px;
+    width: 200px;
+    left: auto !important;
+    top: auto !important;
   }
 
   .phone.back {
     display: none;
+  }
+
+  .phone.front {
+    position: relative;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 24px;
+  }
+
+  .section-description {
+    font-size: 14px;
+  }
+
+  .phone {
+    width: 180px;
   }
 }

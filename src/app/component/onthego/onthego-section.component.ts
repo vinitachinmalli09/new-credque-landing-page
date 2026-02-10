@@ -21,7 +21,7 @@ interface FeatureCard {
   styleUrls: ['./onthego-section.component.scss']
 })
 export class OnthegoSectionComponent {
-     featureCards = [
+  featureCards = [
     { title: 'Good Communication', description: 'Intuitive Dashboards - Control at Your Fingertips', position: { left: '90px', top: '260px' }},
     { title: 'Good Communication', description: 'Intuitive Dashboards - Control at Your Fingertips', position: { left: '220px', top: '170px' }},
     { title: 'Good Communication', description: 'Intuitive Dashboards - Control at Your Fingertips', position: { left: '220px', top: '470px' }},

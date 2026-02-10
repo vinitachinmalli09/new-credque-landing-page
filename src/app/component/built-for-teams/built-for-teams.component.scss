@@ -1,5 +1,5 @@
 .teams-section {
-  background: #f1eeff; /* Matches the very light lavender background */
+  background: #f1eeff;
   padding: 100px 0 150px 0;
   display: flex;
   justify-content: center;
@@ -15,11 +15,11 @@
 
 /* Title Styling */
 .section-title {
-  font-family: 'Inter', sans-serif; /* Cleaner modern font */
+  font-family: 'Inter', sans-serif;
   font-size: 42px;
   font-weight: 600;
   margin-bottom: 60px;
-  color: #4a4a4a; /* Darker grey for "Teams Like Yours" */
+  color: #4a4a4a;
 }
 
 .purple-text {
@@ -51,13 +51,12 @@
 
 .card-box {
   width: 100%;
-  aspect-ratio: 1 / 1; /* Keeps it perfectly square */
+  aspect-ratio: 1 / 1;
   max-width: 280px;
   border-radius: 12px;
-  background: #f1eeff; /* Must match section background */
+  background: #f1eeff;
   position: relative;
   
-  /* Gradient Border Logic */
   border: 1.5px solid transparent;
   background-image: 
     linear-gradient(#f1eeff, #f1eeff), 
@@ -72,7 +71,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 10px; /* Slightly less than card-box to fit inside border */
+  border-radius: 10px;
 }
 
 /* Label Styling */
@@ -80,16 +79,58 @@
   margin-top: 20px;
   font-family: 'Inter', sans-serif;
   font-size: 18px;
-  font-weight: 700; /* Bolder as per reference */
+  font-weight: 700;
   color: #444;
 }
 
-/* Responsive Fixes */
+/* Responsive */
 @media (max-width: 1024px) {
   .teams-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
   }
+  
   .team-card.offset-down {
-    margin-top: 0; /* Remove stagger on tablet */
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .teams-section {
+    padding: 60px 0 80px 0;
+  }
+
+  .container {
+    padding: 0 16px;
+  }
+
+  .section-title {
+    font-size: 28px;
+    margin-bottom: 40px;
+  }
+
+  .teams-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .card-box {
+    max-width: 100%;
+  }
+
+  .team-name {
+    font-size: 16px;
+    margin-top: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+
+  .team-name {
+    font-size: 15px;
   }
 }
