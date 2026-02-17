@@ -1,4 +1,4 @@
- <header class="header">
+<header class="header">
   <div class="header-container">
     <a href="#hero" class="logo" aria-label="Credque home">
       <img src="assets/logo.png" alt="Credque Logo" class="logo-img" />
@@ -6,32 +6,19 @@
 
     <nav class="nav nav-desktop" aria-label="Primary">
       <button class="nav-link" type="button" (click)="toggleFeaturesDropdown()">
-        Features
-          <span class="arrow"></span>
+        Features <span class="arrow"></span>
       </button>
-
       <button class="nav-link" type="button" (click)="toggleFeaturesDropdown()">
-        Pricing
-          <span class="arrow"></span>
+        Pricing <span class="arrow"></span>
       </button>
-
       <button class="nav-link" type="button" (click)="toggleResourcesDropdown()">
-        Resources
-     <span class="arrow"></span>
+        Resources <span class="arrow"></span>
       </button>
     </nav>
 
     <div class="header-cta">
-      <cq-button variant="primary">
-        Book a Demo
-      </cq-button>
-
-      <button
-        type="button"
-        class="hamburger"
-        aria-label="Toggle navigation"
-        (click)="toggleMobileMenu()"
-      >
+      <button class="demo-btn" (click)="openModal()">Book a Demo</button>
+      <button type="button" class="hamburger" aria-label="Toggle navigation" (click)="toggleMobileMenu()">
         <span class="hamburger-line"></span>
         <span class="hamburger-line"></span>
         <span class="hamburger-line"></span>
@@ -42,16 +29,102 @@
   @if (isMobileMenuOpen()) {
     <nav class="nav-mobile" aria-label="Mobile navigation">
       <button class="nav-link" type="button" (click)="toggleFeaturesDropdown()">
-        Features
-         <span class="arrow"></span>
+        Features <span class="arrow"></span>
       </button>
-
       <a href="#pricing" class="nav-link">Pricing</a>
-
       <button class="nav-link" type="button" (click)="toggleResourcesDropdown()">
-        Resources
-          <span class="arrow"></span>
+        Resources <span class="arrow"></span>
       </button>
     </nav>
   }
-</header>                                                                                       
+</header>
+
+<!-- MODAL -->
+@if (isModalOpen()) {
+  <div class="modal-overlay" (click)="onOverlayClick($event)">
+    <div class="modal-container">
+
+      <button class="modal-close" (click)="closeModal()" [disabled]="isSubmitting()">✕</button>
+
+      <div class="modal-header">
+        <h2 class="modal-title">Book a Demo</h2>
+        <p class="modal-subtitle">Fill out the form below and we'll contact you shortly.</p>
+      </div>
+
+      <form class="modal-form" (ngSubmit)="onSubmit()">
+
+        <!-- NAME -->
+        <div class="form-group">
+          <label for="name">Name *</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            [(ngModel)]="formData.name"
+            (input)="onNameInput()"
+            placeholder="Enter your name"
+            [disabled]="isSubmitting()"
+            [class.input-error]="errors.name"
+          />
+          @if (errors.name) {
+            <span class="error-msg">{{ errors.name }}</span>
+          }
+        </div>
+
+        <!-- EMAIL -->
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            [(ngModel)]="formData.email"
+            (input)="onEmailInput()"
+            placeholder="Enter your email"
+            [disabled]="isSubmitting()"
+            [class.input-error]="errors.email"
+          />
+          @if (errors.email) {
+            <span class="error-msg">{{ errors.email }}</span>
+          }
+        </div>
+
+        <!-- PHONE -->
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            [(ngModel)]="formData.phone"
+            placeholder="Enter your phone number"
+            [disabled]="isSubmitting()"
+          />
+        </div>
+
+        <!-- MESSAGE -->
+        <div class="form-group">
+          <label for="message">Message *</label>
+          <textarea
+            id="message"
+            name="message"
+            [(ngModel)]="formData.message"
+            placeholder="Tell us about your requirements"
+            rows="4"
+            [disabled]="isSubmitting()"
+            required
+          ></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn" [disabled]="isSubmitting()">
+          @if (isSubmitting()) {
+            <span class="spinner"></span> Sending...
+          } @else {
+            Submit
+          }
+        </button>
+
+      </form>
+    </div>
+  </div>
+}
